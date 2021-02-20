@@ -1,0 +1,17 @@
+Server can take post request to:
+	/new/deviceName
+		-server checks to make sure it doesnt already have device and replies saying added
+	/set/deviceName/value- either the device is saying im now this, or a remote is saying change state
+		reply saying you updated the value in databse
+
+server can take get request to:
+	/	
+		return a ping if no path specified
+	/deviceName
+		returns its state {1or0}
+	/all returns all devices states
+		{deviceName:state,deviceName:state}
+	/!deviceName/{any other command}
+		!deviceName is letting server know who made the request
+
+if server doesnt receive request from a device in N seconds then remove it from list
