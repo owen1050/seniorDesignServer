@@ -57,6 +57,14 @@ class MyServer(BaseHTTPRequestHandler):
             else:
                 resp = "DEVICE_DOESNT_EXIST"
 
+        if(path[:8] == "/delete/"):
+            i0 = path.find("/", 6) + 1
+            setDevName = path[i0:]
+            print(setDevName)
+            resp = "DEVICE_DOESNT_EXIST_TO_DELETE"
+            if(setDevName in devices):
+                del devices[setDevName] 
+                resp = "DELETED:" + setDevName
 
         self.send_response(200)
         self.send_header("Content-type", "text/html")

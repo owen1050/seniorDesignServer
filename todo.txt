@@ -1,8 +1,12 @@
+Both this server and String"https://suipe53w4l.execute-api.us-east-1.amazonaws.com/stageName/";
+act the same
+
 Server can take post request to:
 	/new/deviceName
 		-server checks to make sure it doesnt already have device and replies saying added
 	/set/deviceName/value- either the device is saying im now this, or a remote is saying change state
 		reply saying you updated the value in databse
+	/delete/deviceName
 
 server can take get request to:
 	/	
@@ -13,5 +17,6 @@ server can take get request to:
 		{deviceName:state,deviceName:state}
 	/!deviceName/{any other command}
 		!deviceName is letting server know who made the request
+
 
 if server doesnt receive request from a device in N seconds then remove it from list
